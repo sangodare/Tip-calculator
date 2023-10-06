@@ -1,0 +1,253 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    font-size: 15px;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: var(--light-grayish-cyan);
+    padding-top: 3rem;
+}
+
+input, textarea, button {
+    font-family: inherit;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+h3 {
+    color: var(--dark-grayish-cyan);
+    margin-bottom: .8rem;
+}
+
+input {
+    background-color: var(--very-light-grayish-cyan);
+    border: 0;
+    color: var(--very-dark-cyan);
+    border-radius: 5px;
+    padding-inline: 10px;
+    width: 100%;
+    text-align: right;
+    outline: none;
+    
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::placeholder {
+    color: var(--grayish-cyan);
+    text-align: right; 
+}
+
+button:hover {
+    background-color: var(--strong-cyan);
+}
+
+button:focus {
+    background-color: var(--light-grayish-cyan);
+}
+
+button:active {
+    border: 2px solid var(--very-dark-cyan);
+}
+
+input:focus {
+    border: 2px solid var(--strong-cyan);
+}
+
+.bill-input-container, .num-container {
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    top: 32%;
+    left: 4%;
+}
+
+span {
+    display: block;
+    color: var(--grayish-cyan);
+}
+
+.flex {
+    display: flex;
+}
+
+.main-container {
+    align-items: center;    
+}
+
+.main-container, .calculation {
+    flex-direction: column;
+}
+
+.span-diff {
+    color: var(--white);
+}
+
+.container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+} 
+
+.logo {
+    margin-bottom: 2rem;
+}
+
+.bill, .num-of-people {
+    height: 3rem;
+}
+
+.bill-input, .tip-selection {
+    margin-bottom: 2rem;
+}
+
+.tips-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tip-btn {
+    display: block;
+    background-color: var(--very-dark-cyan);
+    border: 0;
+    color: var(--white);
+    border-radius: 5px;
+    padding-inline: 2rem;
+    min-height: 3rem;
+}
+.tip-btn--active {
+    background-color: var(--light-grayish-cyan);
+}
+
+.custom-tip {
+    display: block;
+    text-align: left;   
+}
+
+.custom-tip::placeholder {
+    text-align: left;
+}
+
+.calculation {
+    background-color: var(--very-dark-cyan);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.calculation, .row {
+    justify-content: space-between;   
+}
+
+.gap {
+    gap: 4rem;
+}
+
+.first-col {
+    margin-bottom: 1.5rem;
+}
+
+.tip-amount-per-person, .total-per-person {
+    font-size: 2rem;
+    color: var(--strong-cyan);
+    
+}
+
+.error-msg {
+    color: orangered;
+}
+
+.hidden {
+    display: none;
+}
+
+.error-border {
+    border: 2px solid orangered;
+}
+
+.reset {
+    width: 100%;
+    border: 0;
+    color: var(--very-dark-cyan);
+    background-color: rgba(10, 123, 129, 0.4);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding-block: .5rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 700px) {
+    html {
+        font-size: 10px;
+    }
+
+    * {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    input, textarea, button {
+        font-size: inherit;
+    }
+
+    .container {
+        font-size: 1rem;
+    }
+
+    .tips-btns {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+    }
+
+    .row {
+        gap: 1.5rem;
+    }
+
+    .calculation {
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    .span-diff, .span-diff + span{
+        font-size: clamp(1rem, 5vw, 1.2rem);
+    }
+
+    .tip-amount-per-person, .total-per-person {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+}
+
+@media (min-width: 700px) {
+    .container {
+        display: flex;
+        gap: 1.5rem;
+        max-width: 900px;
+    }
+
+    .input, .calculation {
+        width: 50%;
+    }
+}
